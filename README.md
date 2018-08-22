@@ -1,5 +1,4 @@
 # Annotating genomes with RNA families using Infernal
----------------
 
 ### **HOW TO:**
 
