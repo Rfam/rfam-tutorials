@@ -16,13 +16,13 @@ RUN apt-get update && apt-get install -y curl \
     vim
 
 # create the directories
-RUN mkdir /workdir && \
+RUN mkdir /eccb2018 && \
 mkdir /software
 
 # copy and decompress data files
-ADD data/* /workdir/
-RUN gunzip /workdir/ecoli_genome.fa.gz
-RUN gunzip /workdir/Rfam.cm.gz
+ADD data/* /eccb2018/
+RUN gunzip /eccb2018/ecoli_genome.fa.gz
+RUN gunzip /eccb2018/Rfam.cm.gz
 
 # Install infernal
 RUN cd /software && \
@@ -35,6 +35,9 @@ make install && \
 cd /software/infernal-1.1.2/easel && \
 make install && \
 cd miniapps
+
+# modify bashrc to change to working directory automatically
+RUN echo "cd /eccb2018" >> ~/.bashrc
 
 # adding infernal tools to your path
 ENV PATH=/usr/bin:$PATH:/software/infernal-1.1.2/src:/software/infernal-1.1.2/src/miniapps
