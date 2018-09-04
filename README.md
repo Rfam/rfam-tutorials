@@ -1,5 +1,8 @@
 # Annotating genomes with RNA families using Infernal
 
+### **Requirements:**
+A recent installation of Docker Desktop which is available [here](https://www.docker.com/products/docker-desktop).
+
 ### **HOW TO:**
 
 1. Download or clone this repo and move to the directory:
