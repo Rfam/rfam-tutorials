@@ -29,7 +29,7 @@ cmpress subset.cm
 
 # ---------------------- CLANIN ---------------------
 
-grep CL00112 Rfam.clanin >> CL00112.clanin
+grep CL00112 Rfam.clanin > subset.clanin
 
 # ---------------------- CMSCAN ---------------------
 
