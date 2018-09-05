@@ -34,9 +34,11 @@ grep CL00112 Rfam.clanin > subset.clanin
 # ---------------------- CMSCAN ---------------------
 
 cmscan --cut_ga --rfam --acc --nohmmonly --notextw -o cmscan.out --tblout cmscan.tbl subset.cm ecoli_genome.fa
-cmscan --cut_ga --rfam --acc --nohmmonly --notextw -o cmscan_cc.out --tblout cmscan_cc.tbl --clanin CL00112.clanin --oclan --fmt 2 --oskip subset.cm ecoli_genome.fa
+cmscan --cut_ga --rfam --acc --nohmmonly --notextw -o cmscan_cc.out --tblout cmscan_cc.tbl --clanin subset.clanin --oclan --fmt 2 --oskip subset.cm ecoli_genome.fa
 
 # ---------------------- ESL-SFETCH ---------------------
 
 esl-sfetch --index ecoli_genome.fa
 esl-sfetch -c 2729184..2726281 ecoli_genome.fa Chromosome
+
+
