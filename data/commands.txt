@@ -1,4 +1,6 @@
-# This is a support file containing all the commands on the slides
+# Rfam Tutorials
+# Title: Annotating genomes with RNA families using Infernal
+# This is a support file containing all the commands 
 # to be used for copy and paste purposes 
 
 # Fetch the Rfam.cm from ftp
@@ -25,21 +27,31 @@ cmfetch -f Rfam.cm rfam_accessions.txt > subset.cm
 
 # --------------------- CMPRESS ---------------------
 
+# Generate cmscan binaries 
 cmpress subset.cm 
 
 # ---------------------- CLANIN ---------------------
 
+# Create a subset clanin file of the LSU clan
 grep CL00112 Rfam.clanin > subset.clanin
 
 # ---------------------- CMSCAN ---------------------
 
+# Scan E.coli genome with a subset of covariance models
 cmscan --cut_ga --rfam --acc --nohmmonly --notextw -o cmscan.out --tblout cmscan.tbl subset.cm ecoli_genome.fa
+
+# Scan E.coli genome with a subset of covariance models and clan compete them
 cmscan --cut_ga --rfam --acc --nohmmonly --notextw -o cmscan_cc.out --tblout cmscan_cc.tbl --clanin subset.clanin --oclan --fmt 2 subset.cm ecoli_genome.fa
+
+# Scan E.coli genome with a subset of covariance models and clan compete them, but only report significant hits with --oskip
 cmscan --cut_ga --rfam --acc --nohmmonly --notextw -o cmscan_cc_sk.out --tblout cmscan_cc_sk.tbl --clanin subset.clanin --oclan --fmt 2 --oskip subset.cm ecoli_genome.fa
 
 # ---------------------- ESL-SFETCH ---------------------
 
+# Index fasta file for faster sequence retrieval
 esl-sfetch --index ecoli_genome.fa
+
+# Extract LSU rna at positions 2729184-2726281
 esl-sfetch -c 2729184..2726281 ecoli_genome.fa Chromosome
 
 
