@@ -10,10 +10,10 @@ wget ftp://ftp.ebi.ac.uk/pub/databases/Rfam/CURRENT/Rfam.cm.gz
 docker image ls
 
 # Pull the image from the docker registry:
-docker pull ikalvari/eccb2018:latest
+docker pull rfam/tutorials:eccb2018
 
 # Start a docker container
-docker run -it eccb2018:latest /bin/bash
+docker run -it rfam/tutorials:eccb2018 bash
 
 # --------------------- CMFETCH --------------------- 
 
@@ -34,7 +34,8 @@ grep CL00112 Rfam.clanin > subset.clanin
 # ---------------------- CMSCAN ---------------------
 
 cmscan --cut_ga --rfam --acc --nohmmonly --notextw -o cmscan.out --tblout cmscan.tbl subset.cm ecoli_genome.fa
-cmscan --cut_ga --rfam --acc --nohmmonly --notextw -o cmscan_cc.out --tblout cmscan_cc.tbl --clanin subset.clanin --oclan --fmt 2 --oskip subset.cm ecoli_genome.fa
+cmscan --cut_ga --rfam --acc --nohmmonly --notextw -o cmscan_cc.out --tblout cmscan_cc.tbl --clanin subset.clanin --oclan --fmt 2 subset.cm ecoli_genome.fa
+cmscan --cut_ga --rfam --acc --nohmmonly --notextw -o cmscan_cc_sk.out --tblout cmscan_cc_sk.tbl --clanin subset.clanin --oclan --fmt 2 --oskip subset.cm ecoli_genome.fa
 
 # ---------------------- ESL-SFETCH ---------------------
 
