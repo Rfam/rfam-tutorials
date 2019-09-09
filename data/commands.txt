@@ -12,10 +12,10 @@ wget ftp://ftp.ebi.ac.uk/pub/databases/Rfam/CURRENT/Rfam.cm.gz
 docker image ls
 
 # Pull the image from the docker registry:
-docker pull rfam/tutorials:eccb2018
+docker pull rfam/tutorials:infernal
 
 # Start a docker container
-docker run -it rfam/tutorials:eccb2018 bash
+docker run -it rfam/tutorials:infernal bash
 
 # --------------------- CMFETCH --------------------- 
 
