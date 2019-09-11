@@ -36,6 +36,7 @@ USER rfam-user
 
 # copy and decompress data files
 ADD data/* /home/rfam-user/
+RUN rm /home/rfam-user/suspicious_ncRNA_sequences.txt
 RUN gunzip /home/rfam-user/ecoli_genome.fa.gz
 RUN gunzip /home/rfam-user/Rfam.cm.gz
 
