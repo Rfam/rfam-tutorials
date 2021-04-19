@@ -2,3 +2,5 @@ theme: jekyll-theme-slate
 title: Rfam Tutorials
 description: Learn how to annotate a genome with Rfam families using Infernal
 show_downloads: false
+plugins:
+  - jemoji
