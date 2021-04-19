@@ -1,0 +1,19 @@
+#idx target name          accession query name           accession clan name mdl mdl from   mdl to seq from   seq to strand trunc pass   gc  bias  score   E-value inc olp anyidx afrct1 afrct2 winidx wfrct1 wfrct2 description of target
+#--- -------------------- --------- -------------------- --------- --------- --- -------- -------- -------- -------- ------ ----- ---- ---- ----- ------ --------- --- --- ------ ------ ------ ------ ------ ------ ---------------------
+1    Sarbecovirus-3UTR    RF03125   NC_045512.2          -         CL00117    cm        1      335    29536    29870      +    no    1 0.40   0.0  415.9  2.1e-124  !   ^       -      -      -      -      -      - Sarbecovirus 3'UTR
+2    Sarbecovirus-5UTR    RF03120   NC_045512.2          -         CL00116    cm        1      298        1      299      +    no    1 0.45   0.0  342.8  6.2e-103  !   ^       -      -      -      -      -      - Sarbecovirus 5'UTR
+3    bCoV-3UTR            RF03122   NC_045512.2          -         CL00117    cm        1      327    29518    29870      +    no    1 0.41   0.0  189.4   1.7e-48  !   =       1  0.949  1.000      "      "      " Betacoronavirus 3'UTR
+4    bCoV-5UTR            RF03117   NC_045512.2          -         CL00116    cm        1      310        1      299      +    no    1 0.45   0.0  158.8   6.1e-40  !   =       2  1.000  1.000      "      "      " Betacoronavirus 5'UTR
+5    Corona_FSE           RF00507   NC_045512.2          -         -          cm        1       82    13469    13550      +    no    1 0.54   0.0   80.9   1.6e-16  !   *       -      -      -      -      -      - Coronavirus frameshifting stimulation element
+6    s2m                  RF00164   NC_045512.2          -         CL00117    cm        1       43    29727    29769      +    no    1 0.56   0.0   55.7   9.1e-11  !   =       1  1.000  0.128      "      "      " Coronavirus 3' stem-loop II-like motif (s2m)
+7    Corona_pk3           RF00165   NC_045512.2          -         CL00117    cm        1       61    29603    29662      +    no    1 0.35   0.0   55.1     4e-08  !   =       1  1.000  0.179      "      "      " Coronavirus 3' UTR pseudoknot
+#
+# Program:         cmscan
+# Version:         1.1.4 (Dec 2020)
+# Pipeline mode:   SCAN
+# Query file:      virus.fasta
+# Target file:     Rfam.cm
+# Option settings: cmscan -o data/output-no-oskip.txt --tblout data/table-no-oskip.txt --fmt 2 --cut_ga --rfam --nohmmonly --clanin Rfam.clanin Rfam.cm virus.fasta 
+# Current dir:     /home/rfam-user
+# Date:            Mon Apr 19 12:32:51 2021
+# [ok]

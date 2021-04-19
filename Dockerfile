@@ -1,6 +1,5 @@
 FROM debian:latest
 
-# might need to install a particular version of perl
 RUN apt-get update && apt-get install -y curl \
     gcc \
     git \
@@ -15,32 +14,35 @@ RUN apt-get update && apt-get install -y curl \
     g++ \
     vim
 
-# create the directories
 RUN mkdir /software
 
 # Install infernal
 RUN cd /software && \
-curl -OL http://eddylab.org/infernal/infernal-1.1.2.tar.gz && \
-tar -xvzf infernal-1.1.2.tar.gz && \
-cd infernal-1.1.2 && \
-./configure && \
-make && \
-make install && \
-cd /software/infernal-1.1.2/easel && \
-make install && \
-cd miniapps
+    curl -OL http://eddylab.org/infernal/infernal-1.1.4.tar.gz && \
+    tar -xvzf infernal-1.1.4.tar.gz && \
+    cd infernal-1.1.4 && \
+    ./configure && \
+    make && \
+    make install && \
+    cd /software/infernal-1.1.4/easel && \
+    make install
 
 RUN useradd --create-home -s /bin/bash rfam-user
 WORKDIR /home/rfam-user
 USER rfam-user
 
-# copy and decompress data files
-ADD data/* /home/rfam-user/
-RUN rm /home/rfam-user/suspicious_ncRNA_sequences.txt
-RUN gunzip /home/rfam-user/ecoli_genome.fa.gz
-RUN gunzip /home/rfam-user/Rfam.cm.gz
+# Download Rfam data
+RUN wget http://ftp.ebi.ac.uk/pub/databases/Rfam/14.5/Rfam.cm.gz && \
+    gunzip Rfam.cm.gz && \
+    wget http://ftp.ebi.ac.uk/pub/databases/Rfam/14.5/Rfam.clanin
 
-RUN echo "cd /home/rfam-user" >> ~/.bashrc
+# Download SARS-CoV-2 genome
+RUN wget -O virus.fasta "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nucleotide&rettype=fasta&retmode=text&id=NC_045512.2"
+
+# copy data files
+# ADD data/* /home/rfam-user/
 
 # adding infernal tools to your path
-ENV PATH=/usr/bin:$PATH:/software/infernal-1.1.2/src:/software/infernal-1.1.2/src/miniapps
+ENV PATH=/usr/bin:$PATH:/software/infernal-1.1.4/src:/software/infernal-1.1.4/src/miniapps
+
+ENTRYPOINT ["/bin/bash"]

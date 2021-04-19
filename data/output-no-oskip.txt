@@ -1,0 +1,221 @@
+# cmscan :: search sequence(s) against a CM database
+# INFERNAL 1.1.4 (Dec 2020)
+# Copyright (C) 2020 Howard Hughes Medical Institute.
+# Freely distributed under the BSD open source license.
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# query sequence file:                   virus.fasta
+# target CM database:                    Rfam.cm
+# output directed to file:               data/output-no-oskip.txt
+# tabular output of hits:                data/table-no-oskip.txt
+# tabular output format:                 2
+# model-specific thresholding:           GA cutoffs
+# Rfam pipeline mode:                    on [strict filtering]
+# clan information read from file:       Rfam.clanin
+# HMM-only mode for 0 basepair models:   no
+# number of worker threads:              2
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Query:       NC_045512.2  [L=29903]
+Description: Severe acute respiratory syndrome coronavirus 2 isolate Wuhan-Hu-1, complete genome
+Hit scores:
+ rank     E-value  score  bias  modelname          start    end   mdl trunc   gc  description
+ ----   --------- ------ -----  ----------------- ------ ------   --- ----- ----  -----------
+  (1) !  2.1e-124  415.9   0.0  Sarbecovirus-3UTR  29536  29870 +  cm    no 0.40  Sarbecovirus 3'UTR
+  (2) !  6.2e-103  342.8   0.0  Sarbecovirus-5UTR      1    299 +  cm    no 0.45  Sarbecovirus 5'UTR
+  (3) !   1.7e-48  189.4   0.0  bCoV-3UTR          29518  29870 +  cm    no 0.41  Betacoronavirus 3'UTR
+  (4) !   6.1e-40  158.8   0.0  bCoV-5UTR              1    299 +  cm    no 0.45  Betacoronavirus 5'UTR
+  (5) !   1.6e-16   80.9   0.0  Corona_FSE         13469  13550 +  cm    no 0.54  Coronavirus frameshifting stimulation element
+  (6) !   9.1e-11   55.7   0.0  s2m                29727  29769 +  cm    no 0.56  Coronavirus 3' stem-loop II-like motif (s2m)
+  (7) !     4e-08   55.1   0.0  Corona_pk3         29603  29662 +  cm    no 0.35  Coronavirus 3' UTR pseudoknot
+
+
+Hit alignments:
+>> Sarbecovirus-3UTR  Sarbecovirus 3'UTR
+ rank     E-value  score  bias mdl mdl from   mdl to       seq from      seq to       acc trunc   gc
+ ----   --------- ------ ----- --- -------- --------    ----------- -----------      ---- ----- ----
+  (1) !  2.1e-124  415.9   0.0  cm        1      335 []       29536       29870 + .. 1.00    no 0.40
+
+                                                                                                                   NC
+                          ::::::::::::<<<<<<--<<-<<<<<<<<<<<--<<<---<<______>>--->>>->>>>>>>>>>>>>>>>>>>--------[[ CS
+  Sarbecovirus-3UTR     1 UcAUGauGACCACaCaaGGCaGAugGgCuauguaAACGuUUUCGCaaUUCCGUUUaCGAuacauaGcCcaCuCuuGuGcAGAAUGAau 88   
+                          UCAUG +GACCACACAAGGCAGAU:G:CUAU:UAAACGUUUUCGC++UUCCGUUUACGAUA:AUAG:C:ACUCUUGUGCAGAAUGAAU
+        NC_045512.2 29536 UCAUGCAGACCACACAAGGCAGAUGGGCUAUAUAAACGUUUUCGCUUUUCCGUUUACGAUAUAUAGUCUACUCUUGUGCAGAAUGAAU 29623
+                          **************************************************************************************** PP
+
+                                                                                                                   NC
+                          [[[[,<<<<<<<<<-<<____>>-->>>>>>>>>,((((((--((((((((((--((--(((-(((-----((((((((<-<<-<<<_ CS
+  Sarbecovirus-3UTR    89 uCuCGuaaCuacacAgCACAAGcAGguguaGuuaACuuuaaUcuCaCauaGCaAUCuUUaaucaauGUGUAacauuaGGGAGGACucG 176  
+                          UCUCGUAACUACA:A:CACAAG:AG:UGUAGUUAACUUUAAUCUCACAUAGCAAUCUUUAAUCA:UGUGUAACAUUAGGGAGGACU:G
+        NC_045512.2 29624 UCUCGUAACUACAUAGCACAAGUAGAUGUAGUUAACUUUAAUCUCACAUAGCAAUCUUUAAUCAGUGUGUAACAUUAGGGAGGACUUG 29711
+                          **************************************************************************************** PP
+
+                                                     v                  v                                          NC
+                          ___>>>>>->,,<<<<<<<<<----<<<-<<<<_____>>-->>-->>>--->>>>>->>>>,<<<<________>>>>,,,,,,,,, CS
+  Sarbecovirus-3UTR   177 AAAgaGCCACCACauuuuCacCGAGgccAcGcGGAGUACgAUCgAGggcACAguGaauaauGCuaGGGAGAGCUGCCuaUAUGGAAGA 264  
+                          AAA:AGCCACCACAUUUUCACCGAG:C ACGCGGAGUACGAUCGAG G:ACAGUGAA AAUGCUAGGGAGAGCUGCCUAUAUGGAAGA
+        NC_045512.2 29712 AAAGAGCCACCACAUUUUCACCGAGGCCACGCGGAGUACGAUCGAGUGUACAGUGAACAAUGCUAGGGAGAGCUGCCUAUAUGGAAGA 29799
+                          **************************************************************************************** PP
+
+                                                                                                  NC
+                          ,,))))))))-----)))-)))--))---)))))------)))))--))))-))<<____>>]]]]]]::: CS
+  Sarbecovirus-3UTR   265 GCCCuaauguGUAAAauuAauuUUaGUAGuGCuaUCCCCAuGuGaUUuuaaUaGCuUCUUaGGaGaauGAC 335  
+                          GCCCUAAUGUGUAAAA:UAAUUUUAGUAGUGCUAUCCCCAUGUGAUUUUAAUAGCUUCUUAGGAGAAUGAC
+        NC_045512.2 29800 GCCCUAAUGUGUAAAAUUAAUUUUAGUAGUGCUAUCCCCAUGUGAUUUUAAUAGCUUCUUAGGAGAAUGAC 29870
+                          *********************************************************************** PP
+
+>> Sarbecovirus-5UTR  Sarbecovirus 5'UTR
+ rank     E-value  score  bias mdl mdl from   mdl to       seq from      seq to       acc trunc   gc
+ ----   --------- ------ ----- --- -------- --------    ----------- -----------      ---- ----- ----
+  (2) !  6.2e-103  342.8   0.0  cm        1      298 []           1         299 + [. 0.99    no 0.45
+
+                                   vv           vv                                                                   NC
+                        ::::::<<<<<<<-<<<____>>>>>..>>>>>,,,,,,.,,,,<<<<<_____>>>>>,<<<<_______>>>>,,,,,,,,<<<<<<<<- CS
+  Sarbecovirus-5UTR   1 AuauuAgGcuuuuACCuaccCaGGaa..aagCcAAccAA.uuUcGauCuCUUGUaGauCUGuuCUcUAAAcGaaCUUUAAAAUCuGcGuggC 89 
+                        AU+  AGG:UU  ACCU+CCCAGG    AA:CCAACCAA UUUCGAUCUCUUGUAGAUCUGUUCUCUAAACGAACUUUAAAAUCUG:GUG:C
+        NC_045512.2   1 AUUAAAGGUUUAUACCUUCCCAGGUAacAAACCAACCAAcUUUCGAUCUCUUGUAGAUCUGUUCUCUAAACGAACUUUAAAAUCUGUGUGGC 92 
+                        ************************6666***********999************************************************** PP
+
+                                                                                              v                      NC
+                        <<-<<<<-<<<_____>>>->>>>>>->>>>>>>>------------------------((((((((((((-(((((---(((-(((-(((( CS
+  Sarbecovirus-5UTR  90 uGUCgCucgGCUGcAUGCcuaGcGCacccaCgCaGUAUAAauAaUAAuaAAuUUUAcUGuCGuuGaCagGgaaCgaGUAACuCGuCcauCuu 181
+                        UGUC:CUC:GCUGCAUGC:UAG:GCAC:CAC:CAGUAUAA+UAAUAA +AA  UUACUGUCGUUGACAGG  AC:AGUAACUCGUC:AUCUU
+        NC_045512.2  93 UGUCACUCGGCUGCAUGCUUAGUGCACUCACGCAGUAUAAUUAAUAACUAA--UUACUGUCGUUGACAGGACACGAGUAACUCGUCUAUCUU 182
+                        ***************************************************..9************************************** PP
+
+                                                                                                                     NC
+                        <<<--<<<<<<-<<<<<______>>>>>-->>>>>>------>>><<<<<<<-<<______>>>>>>>>><<<____>>>))))-))))))- CS
+  Sarbecovirus-5UTR 182 CuGCAGgCuGCUcaCGGUUUCGUCCGugUUGCaGcCGAUCAUCaGCacacCcAGGUUUcGUCCgGguguGaCCGAAAGGuaaGaUgGaGaGC 273
+                        CUGCAGGCUGCU:ACGGUUUCGUCCGU:UUGCAGCCGAUCAUCAGCACA:C:AGGUUUCGUCC:G:UGUGACCGAAAGGUAAGAU:GAGAGC
+        NC_045512.2 183 CUGCAGGCUGCUUACGGUUUCGUCCGUGUUGCAGCCGAUCAUCAGCACAUCUAGGUUUCGUCCGGGUGUGACCGAAAGGUAAGAUGGAGAGC 274
+                        ******************************************************************************************** PP
+
+                             v                    NC
+                        ))))))))))---)))))))::::: CS
+  Sarbecovirus-5UTR 274 CucGucCcuGGuuuCaaCGaGAAAA 298
+                        CU:GU CCUGGUUUCAACGAGAAAA
+        NC_045512.2 275 CUUGUCCCUGGUUUCAACGAGAAAA 299
+                        ************************* PP
+
+>> bCoV-3UTR  Betacoronavirus 3'UTR
+ rank     E-value  score  bias mdl mdl from   mdl to       seq from      seq to       acc trunc   gc
+ ----   --------- ------ ----- --- -------- --------    ----------- -----------      ---- ----- ----
+  (3) !   1.7e-48  189.4   0.0  cm        1      327 []       29518       29870 + .. 0.93    no 0.41
+
+                                                           v          vvvv     v              v       vvvv         NC
+                    :::::::::::::.:...::::::::::::::<<<<<.-<<--<<<<<<-<<<<--<<<<--<<______>>-->>>>---->>>>->>>>>>> CS
+    bCoV-3UTR     1 auauuauuAugcU.a...AcUuuuaAaugUAacgAGa.augaagccuAuugcGacAcugggugGUAACCCCccgccagaaAguCgcgaUaggcc 89   
+                     U+++ U+A+GC  A    C U+ A A    AC:AG  A :+ G:CUAU ++ A  C:: +U:G     CC:++ ::GA+A      AUAG:C:
+  NC_045512.2 29518 CUCAACUCAGGCCuAaacUCAUGCAGACCACACAAGGcAGAUGGGCUAUAUAAA--CGUUUUCGCUUUUCCGUUUACGAUAU-----AUAGUCU 29604
+                    *********55553356644445556666669999985677889******9977..********999999********9955.....******* PP
+
+                    v               v       v                             v                    v                   NC
+                    >->>>>>---------[[[[[[[,<<<<<<<<<<___________>>>>>>>>>>,,,,,(((((((((((((((((.---(((---------- CS
+    bCoV-3UTR    90 aCuCUcguaCAGAAUGgAuUCuuGcugccacaAcAGuacAAGAAGgUuguggcagaCCUuuauuAucucauuGcuau.guUauuuuaaAgUgUg 182  
+                     C CU:GU CAGAAUG AUUCU:  U::C:::A:AG ACAAG+AG:U:::G::A   CUUUA:::UC:CAU:GC: U +UUA::    AGUGUG
+  NC_045512.2 29605 ACUCUUGUGCAGAAUGAAUUCUC-GUAACUACAUAGCACAAGUAGAUGUAGUUAA--CUUUAAUCUCACAUAGCAAUcUUUAAUC---AGUGUG 29692
+                    ***********************.9*****************************9..8889****************99999999...****** PP
+
+                                                       v                                           v               NC
+                    ---((((((((,,,,,,,,,,,,,,.......<<<<<<<<______............___.......______>>>->>>>>,.......... CS
+    bCoV-3UTR   183 UAacugguggGAGaAauUgaaAAAG.......aCuuuCgcCuAuGC............aUA.......ugaacagcGAaaaGuG.......... 240  
+                    UAAC::::GGGAG A UUGAAA+AG       A:U UC:CC+A+GC                      UG+ACAG:GAA A:UG          
+  NC_045512.2 29693 UAACAUUAGGGAGGACUUGAAAGAGccaccacAUUUUCACCGAGGCcacgcggaguac---gaucgagUGUACAGUGAACAAUGcuagggagag 29783
+                    ********************99999**********************99999885555...5555666************************** PP
+
+                                                                   v                                       v   NC
+                    ...<<<___>>>,,,,,))))))))---------------)))---)))))))------)))))))))),,,,<<____>>]]]]]]]:: CS
+    bCoV-3UTR   241 ...CCcauagGGAAGAGCccaccagUGUaAAaUuUUcAaaaauauaauagCaauuccauugagaUaauaaUGGCUUuUUAGaaGAaUcgC 327  
+                       CC:AUA:GGAAGAGCCC::::GUGUAAAAUU   AA+::UA +A :GC:AU+CC +UG:GA:::UAAU+GCUU UUAG:AGAAU +C
+  NC_045512.2 29784 cugCCUAUAUGGAAGAGCCCUAAUGUGUAAAAUU---AAUUUUAGUAGUGCUAUCCCCAUGUGAUUUUAAUAGCUUCUUAGGAGAAUGAC 29870
+                    **********************************...9999************************************************* PP
+
+>> bCoV-5UTR  Betacoronavirus 5'UTR
+ rank     E-value  score  bias mdl mdl from   mdl to       seq from      seq to       acc trunc   gc
+ ----   --------- ------ ----- --- -------- --------    ----------- -----------      ---- ----- ----
+  (4) !   6.1e-40  158.8   0.0  cm        1      310 []           1         299 + [. 0.97    no 0.45
+
+                              v              v                                                          v            NC
+                  ::::::<<<<<-<<<<<______>>>>>-->>>>>,,,,...,,,<<<<<_____>>>>>,,,,,,,,,,,,,,,,,,,,,,,,,,<<<<<---<<<- CS
+    bCoV-5UTR   1 GAaUaagaGuGAaUaGCuUcCGuGCuAuCcCaCucaCCU...CuCGauCUCUUGUAGauCUuuUcUUUaAACGAACUUuAAAAAaAagcguuCcugcg 95 
+                    +UAA::GU:  UA:CUUCC +G:UA C :AC::ACC     UCGAUCUCUUGUAGAUCU UUCU+UAAACGAACUUUAAAA   +::G:   UG  
+  NC_045512.2   1 A-UUAAAGGUUUAUACCUUCCCAGGUAACAAACCAACCAacuUUCGAUCUCUUGUAGAUCUGUUCUCUAAACGAACUUUAAAA---UCUGU--GUGGC 92 
+                  *.************************************7***99***************************************...*****..***** PP
+
+                    v    v           v    v           v                                                     v        NC
+                  --<<<<<<<<<_____>>>>>>>>>-->>>-->>>>>,,,,,......,..,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,<<<_____ CS
+    bCoV-5UTR  96 UugccgucggcUGCaUgccgacggcuugcaaUacgcuuaAcA......A..UUuuaauUUcaUUcaaaUaAuAUuUUUCAgUcAGaGaGUgGugUaUc 185
+                  U  C::U :GCUGCAUGC: A::G ++ CA  :C:: UA++A      A    UUA+U UC UU+A A +A A+   U A U        +GU+UAUC
+  NC_045512.2  93 UGUCACUCGGCUGCAUGCUUAGUGCACUCAC-GCAG-UAUAAuuaauaAcuAAUUACUGUCGUUGACAGGACACGAGUAACU--------CGUCUAUC 180
+                  *******************************.****.777778****9555578899999**********************........******** PP
+
+                        v                                                       v          v                         NC
+                  ____>>>,,,,,,,,,,,<<---<<<______>>>>>,,,,,,,,,,,,,,,,,<<<<<<<-<<<______>>>>>>>>>>::::::::::::::::: CS
+    bCoV-5UTR 186 uugugCcUCugGguCaCAacaaucgGUUuCGUCcgguucGuggcgAAUuaugAGcacggccUcggUUUCGuccgggccgugGaauuucgaUGggugug 283
+                  UU UGC     GG  +C ::   CGGUUUCGUCCG::U+G +GC+ AU AU AGCAC::C: +GGUUUCGUCC :G::GUG++ + + G+U  G + G
+  NC_045512.2 181 UUCUGC----AGGCUGCUUA---CGGUUUCGUCCGUGUUGCAGCCGAUCAUCAGCACAUCU-AGGUUUCGUCC-GGGUGUGACCGAAAGGUAAGAUGG 269
+                  ******....**********...**************************************.***********.***************999999998 PP
+
+                                                   NC
+                  :::::::::::::::::::::.....:::::: CS
+    bCoV-5UTR 284 uccGaacucAGcugAGAagUU.....aGagAA 310
+                  +  GA C ++G     +  UU     AGA AA
+  NC_045512.2 270 A--GAGCCUUGUCCCUGGUUUcaacgAGAAAA 299
+                  8..999999999999988888*********** PP
+
+>> Corona_FSE  Coronavirus frameshifting stimulation element
+ rank     E-value  score  bias mdl mdl from   mdl to       seq from      seq to       acc trunc   gc
+ ----   --------- ------ ----- --- -------- --------    ----------- -----------      ---- ----- ----
+  (5) !   1.6e-16   80.9   0.0  cm        1       82 []       13469       13550 + .. 1.00    no 0.54
+
+                                                                  v      v                             NC
+                    :::::::<<<<<<<<--<<_____>>->>>>>>>>--<<-<<<<-<<<____>>>>>->>->>::::::::::::::::::: CS
+   Corona_FSE     1 GAGUacGGGGuuCuAGUccuGCcCggCUaGaaCCCUGcgccacuGGuccugagaCagAugucgUuuuaAGgGCuUUUGAuaU 82   
+                    G+GU+ G:GGU:::AGU:C+GCCCG:CU:::ACC:UGCG CAC:GG :CU+ : C:GAUGUCGU+U+ AGGGCUUUUGA+AU
+  NC_045512.2 13469 GGGUUUGCGGUGUAAGUGCAGCCCGUCUUACACCGUGCGGCACAGGCACUAGUACUGAUGUCGUAUACAGGGCUUUUGACAU 13550
+                    ********************************************************************************** PP
+
+>> s2m  Coronavirus 3' stem-loop II-like motif (s2m)
+ rank     E-value  score  bias mdl mdl from   mdl to       seq from      seq to       acc trunc   gc
+ ----   --------- ------ ----- --- -------- --------    ----------- -----------      ---- ----- ----
+  (6) !   9.1e-11   55.7   0.0  cm        1       43 []       29727       29769 + .. 1.00    no 0.56
+
+                                v                  v            NC
+                    :<<<<<----<<<-<<<<_____>>-->>-->>>--->>>>>: CS
+          s2m     1 ggguGCCGaGGCCACGCgGAGUAcGAUCGAGGGUACAGCaccu 43   
+                     ::::CCGAGGC ACGCGGAGUACGAUCGAG GUACAG::::+
+  NC_045512.2 29727 UUUCACCGAGGCCACGCGGAGUACGAUCGAGUGUACAGUGAAC 29769
+                    ******************************************* PP
+
+>> Corona_pk3  Coronavirus 3' UTR pseudoknot
+ rank     E-value  score  bias mdl mdl from   mdl to       seq from      seq to       acc trunc   gc
+ ----   --------- ------ ----- --- -------- --------    ----------- -----------      ---- ----- ----
+  (7) !     4e-08   55.1   0.0  cm        1       61 []       29603       29662 + .. 0.96    no 0.35
+
+                                                                                  NC
+                    :::::::::::::::::::::::::::<<<<<<<<<___________>>>>>>>>>::::: CS
+   Corona_pk3     1 CUACUCUUGuACAGAAUGGuAauCcaGUauaaUAacAGUaCAAGaAGguUAuuauAUAuuA 61   
+                    CUACUCUUGU CAGAAUG++  UC++GUA:::: A:AG ACAAG+AG:U ::::UA  UU 
+  NC_045512.2 29603 CUACUCUUGUGCAGAAUGAA-UUCUCGUAACUACAUAGCACAAGUAGAUGUAGUUAACUUU 29662
+                    ******************66.********88888***************88888******* PP
+
+
+
+Internal CM pipeline statistics summary:
+----------------------------------------
+Query sequence(s):                                               1  (59806 residues searched)
+Query sequences re-searched for truncated hits:                  1  (667.9 residues re-searched, avg per model)
+Target model(s):                                              3934  (464097 consensus positions)
+Windows   passing  local HMM SSV           filter:          155505  (0.103); expected (0.06)
+Windows   passing  local HMM Viterbi       filter:           34995  (0.02176); expected (0.02)
+Windows   passing  local HMM Viterbi  bias filter:           25051  (0.01437); expected (0.02)
+Windows   passing  local HMM Forward       filter:            1640  (0.00121); expected (0.0002)
+Windows   passing  local HMM Forward  bias filter:            1047  (0.0007709); expected (0.0002)
+Windows   passing glocal HMM Forward       filter:             757  (0.0005877); expected (0.0002)
+Windows   passing glocal HMM Forward  bias filter:             699  (0.0005285); expected (0.0002)
+Envelopes passing glocal HMM envelope defn filter:             691  (0.0003461); expected (0.0002)
+Envelopes passing  local CM  CYK           filter:             182  (7.975e-05); expected (0.0001)
+Total CM hits reported:                                          7  (6.183e-06); includes 0 truncated hit(s)
+
+# CPU time: 40.77u 1.22s 00:00:41.99 Elapsed: 00:00:24.62
+//
+[ok]
