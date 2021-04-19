@@ -2,11 +2,15 @@
 
 This tutorial shows how to use the [Infernal](http://eddylab.org/infernal) software to annotate the reference SARS-CoV-2 genome with RNA families from [Rfam](https://rfam.org).
 
+![SARS-CoV-2 Rfam predictions](https://rfam.org/static/images/coronavirus/sarbecovirus.png)
+
+The same approach can be used to find RNA families in any RNA or DNA sequence.
+
 ### Requirements
 
-Please install [Docker Desktop](https://www.docker.com/products/docker-desktop) on your computer in order to access a complete working environment pre-configured using Docker.
+- [Docker Desktop](https://www.docker.com/products/docker-desktop) on your computer in order to access a complete working environment pre-configured using Docker.
 
-Alternatively, try [Play with Docker](https://labs.play-with-docker.com/) in your browser (requires a free Docker account and depends on the resource availability).
+:bulb: Alternatively, try [Play with Docker](https://labs.play-with-docker.com/) in your browser (requires a free Docker account and depends on the resource availability).
 
 ### Getting started
 
