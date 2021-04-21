@@ -10,7 +10,9 @@ The same approach can be used to find RNA families in any RNA or DNA sequence.
 
 - [Docker Desktop](https://www.docker.com/products/docker-desktop) on your computer in order to access a complete working environment pre-configured using Docker.
 
-:bulb: Alternatively, try [Play with Docker](https://labs.play-with-docker.com/) in your browser (requires a free Docker account and depends on the resource availability).
+:bulb: Alternatively, try [Play with Docker](https://labs.play-with-docker.com/) (PWD) in your browser (requires a free Docker account and depends on the resource availability).
+
+[![Try in PWD](https://github.com/play-with-docker/stacks/raw/master/assets/images/button.png)](https://labs.play-with-docker.com/)
 
 ### Getting started
 
