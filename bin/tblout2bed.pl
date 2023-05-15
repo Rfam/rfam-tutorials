@@ -10,12 +10,7 @@ open (IN, "$infile") or die "Cannot open file $infile $!\n";
 while (<IN>){
   # skip lines beginning #
   unless ($_ =~ /^#/){
-    my @data = split(/\s+/,$_);
-
-    # need to ignore those where chrom is non-standard
-    if ($data[0] =~ /chr\w{1,2}_\S+/){
-      next;
-    }
+    my @data = split(/\s+/, $_, 27);
 
     # Clean up bitscore
     my @value_array = (split/\./, $data[14]);
@@ -24,14 +19,25 @@ while (<IN>){
       $bit_score = 1000;
     }
 
+    my $chromosome = $data[3];
+    my $chromStart = -1;
+    my $chromEnd = -1;
+    my $name = $data[1];
+    my $strand = $data[11];
     # start must be lower than end - so the two need reversing if strand = '-'
-    if ($data[9] eq '+'){
-      print "$data[0]\t$data[7]\t$data[8]\t$data[2]\t$bit_score\t$data[9]\n";
-    } elsif ($data[9] eq '-'){
-      print "$data[0]\t$data[8]\t$data[7]\t$data[2]\t$bit_score\t$data[9]\n";
+    if ($strand eq '+'){
+      $chromStart = $data[9];
+      $chromEnd = $data[10];
+    } elsif ($strand eq '-'){
+      $chromStart = $data[10];
+      $chromEnd = $data[9];
     } else {
-      print "Strand character unrecognised in line: $_";
+      print "Strand character ($strand) unrecognised in line: $_";
+      continue;
     }
+
+    # See: https://genome.ucsc.edu/FAQ/FAQformat.html#format1
+    print "$chromosome\t$chromStart\t$chromEnd\t$name\t$bit_score\t$strand\n";
   }
 
 } #end of loop through infile
