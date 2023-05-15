@@ -42,7 +42,7 @@ RUN wget -O virus.fasta "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fc
 # copy data files
 # ADD data/* /home/rfam-user/
 
-# adding infernal tools to your path
-ENV PATH=/usr/bin:$PATH:/software/infernal-1.1.4/src:/software/infernal-1.1.4/src/miniapps
+COPY bin/tblout2bed.pl /usr/local/bin/tblout2bed.pl
+
 
 ENTRYPOINT ["/bin/bash"]
