@@ -32,9 +32,9 @@ WORKDIR /home/rfam-user
 USER rfam-user
 
 # Download Rfam data
-RUN wget http://ftp.ebi.ac.uk/pub/databases/Rfam/14.5/Rfam.cm.gz && \
+RUN wget http://ftp.ebi.ac.uk/pub/databases/Rfam/14.9/Rfam.cm.gz && \
     gunzip Rfam.cm.gz && \
-    wget http://ftp.ebi.ac.uk/pub/databases/Rfam/14.5/Rfam.clanin
+    wget http://ftp.ebi.ac.uk/pub/databases/Rfam/14.9/Rfam.clanin
 
 # Download SARS-CoV-2 genome
 RUN wget -O virus.fasta "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nucleotide&rettype=fasta&retmode=text&id=NC_045512.2"
