@@ -44,5 +44,6 @@ RUN wget -O virus.fasta "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fc
 
 COPY bin/tblout2bed.pl /usr/local/bin/tblout2bed.pl
 
+ENV PATH=/usr/bin:$PATH
 
 ENTRYPOINT ["/bin/bash"]
